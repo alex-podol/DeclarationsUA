@@ -8,19 +8,47 @@
 import Foundation
 import Alamofire
 
+typealias JSON = [String: Any]
+
+
 class NetworkLayer {
     
-    static func searchDeclarations(name: String, page: Int = 1) {
+    static func searchDeclarations(name: String, page: Int = 1, completion: @escaping ([AccountModel]?, PageModel?) -> Void) {
         
-        let parameters: [String: Any] = ["page": page, "q": name]
-         
+        let parameters: JSON = ["page": page, "q": name]
+        
+        
+        
         AF.request(K.ProductionServer.baseURL, method: .get, parameters: parameters).responseJSON { (jsonResponce) in
             
             do {
-                try print(jsonResponce.result.get())
-            } catch {
-                print("error: \(error.localizedDescription)")
+            
+            if let jsonValue = try jsonResponce.result.get() as? JSON,
+               let jsonItems = jsonValue["items"],
+               let jsonPage = jsonValue["page"] {
+                
+                let decoder = JSONDecoder()
+                
+                if let itemsData = try? JSONSerialization.data(withJSONObject: jsonItems, options: []),
+                   let pageData = try? JSONSerialization.data(withJSONObject: jsonPage, options: []) {
+                    
+                    let itemsArray = try? decoder.decode([AccountModel].self, from: itemsData)
+                    let page = try? decoder.decode(PageModel.self, from: pageData)
+                    
+                    completion(itemsArray, page) // после окончания работы метода на выход передаем эти два обекта
+                }
+            } else {
+                completion(nil, nil)
             }
+                
+            } catch {
+                print("Find \(error.localizedDescription)")
+            }
+                
         }
+        
+
+        
+        
     }
 }
