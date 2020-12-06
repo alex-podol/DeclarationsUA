@@ -13,6 +13,11 @@ class AccountTableViewCell: UITableViewCell {
     @IBOutlet weak private var placeOfWorkLabel: UILabel!
     @IBOutlet weak private var pdfIcon: UIImageView!
     
+    // идентификатор ячейки и xib-файла по имени экземпляра класса
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
     func setup(with account: AccountModel) {
         
         nameLabel.text = "\(account.firstname) \(account.lastname)"

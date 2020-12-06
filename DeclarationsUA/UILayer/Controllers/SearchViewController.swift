@@ -43,6 +43,8 @@ class SearchViewController: UIViewController {
             
             let destination = segue.destination as? SearchResultViewController
             
+            destination?.nameForSearch = nameFieldOutlet.text ?? ""
+            
             let backButton = UIBarButtonItem()
             backButton.title = ""
             navigationItem.backBarButtonItem = backButton
