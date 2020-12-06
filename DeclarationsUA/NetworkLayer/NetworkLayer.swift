@@ -17,38 +17,31 @@ class NetworkLayer {
         
         let parameters: JSON = ["page": page, "q": name]
         
-        
-        
         AF.request(K.ProductionServer.baseURL, method: .get, parameters: parameters).responseJSON { (jsonResponce) in
             
             do {
-            
-            if let jsonValue = try jsonResponce.result.get() as? JSON,
-               let jsonItems = jsonValue["items"],
-               let jsonPage = jsonValue["page"] {
                 
-                let decoder = JSONDecoder()
-                
-                if let itemsData = try? JSONSerialization.data(withJSONObject: jsonItems, options: []),
-                   let pageData = try? JSONSerialization.data(withJSONObject: jsonPage, options: []) {
+                if let jsonValue = try jsonResponce.result.get() as? JSON,
+                   let jsonItems = jsonValue["items"],
+                   let jsonPage = jsonValue["page"] {
                     
-                    let itemsArray = try? decoder.decode([AccountModel].self, from: itemsData)
-                    let page = try? decoder.decode(PageModel.self, from: pageData)
+                    let decoder = JSONDecoder()
                     
-                    completion(itemsArray, page) // после окончания работы метода на выход передаем эти два обекта
+                    if let itemsData = try? JSONSerialization.data(withJSONObject: jsonItems, options: []),
+                       let pageData = try? JSONSerialization.data(withJSONObject: jsonPage, options: []) {
+                        
+                        let itemsArray = try? decoder.decode([AccountModel].self, from: itemsData)
+                        let page = try? decoder.decode(PageModel.self, from: pageData)
+                        
+                        completion(itemsArray, page) // после окончания работы метода на выход передаем эти два обекта
+                    }
+                } else {
+                    completion(nil, nil)
                 }
-            } else {
-                completion(nil, nil)
-            }
                 
             } catch {
                 print("Find \(error.localizedDescription)")
             }
-                
         }
-        
-
-        
-        
     }
 }

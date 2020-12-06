@@ -1,24 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gHy-bL-0NO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Державний Реєстр Декларацій-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="BYZ-38-t0r" customClass="SearchViewController" customModule="DeclarationsUA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введіть ПІБ або посаду" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9vx-Rx-Avk">
+                                <rect key="frame" x="15" y="103" width="384" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2fG-WZ-Sgm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="search"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joq-6o-ehz">
+                                <rect key="frame" x="15" y="152" width="384" height="36"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Пошук">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="R5s-od-Sz2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFD-j9-abz">
+                                <rect key="frame" x="15" y="196" width="384" height="30"/>
+                                <state key="normal" title="Повідомити про корупцію">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="reportButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="u4w-cU-KJY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L20-3f-7zw">
+                                <rect key="frame" x="15" y="234" width="384" height="351"/>
+                                <mutableString key="text">Проект має на меті спростити подання публічними службовцями їх декларацій майнового стану, доступ до них та їх перевірку. Для цього система електронного декларування передбачає виконання таких задач:
+
+● спрощення введення даних суб’єктом декларування;
+● забезпечення захищеного протоколу автентифікації для входу в систему електронного декларування;
+● запобігання помилкам з боку суб’єкта декларування під час введення даних;
+● забезпечення захищеного зберігання введених даних;
+● надання відкритого онлайнового доступу та засобів пошуку по відкритих даних, що містяться в деклараціях, і можливості їх звантаження;
+● API для розробників для забезпечення захищеного доступу до відкритих даних із декларацій майнового стану та їх звантаження в різних форматах;
+● оптимізація процедур обробки декларацій майнового стану персоналом НАЗК і створення ефективного бізнес-процесу перевірки декларацій.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QFD-j9-abz" firstAttribute="top" secondItem="joq-6o-ehz" secondAttribute="bottom" constant="8" id="KvW-59-5lK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9vx-Rx-Avk" secondAttribute="trailing" constant="15" id="L3F-ai-1eM"/>
+                            <constraint firstItem="joq-6o-ehz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="LN5-MB-mpK"/>
+                            <constraint firstItem="L20-3f-7zw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Zgy-Hu-DC4"/>
+                            <constraint firstItem="9vx-Rx-Avk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="bgW-ZH-YVr"/>
+                            <constraint firstItem="9vx-Rx-Avk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="lfj-T4-pZV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L20-3f-7zw" secondAttribute="trailing" constant="15" id="naW-br-NRb"/>
+                            <constraint firstItem="joq-6o-ehz" firstAttribute="top" secondItem="9vx-Rx-Avk" secondAttribute="bottom" constant="5" id="r0m-NI-ZM6"/>
+                            <constraint firstItem="L20-3f-7zw" firstAttribute="top" secondItem="QFD-j9-abz" secondAttribute="bottom" constant="8" id="sB1-Ph-RLo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="joq-6o-ehz" secondAttribute="trailing" constant="15" id="usq-q4-uw4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QFD-j9-abz" secondAttribute="trailing" constant="15" id="z9q-cx-V65"/>
+                            <constraint firstItem="QFD-j9-abz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="zRj-SW-TXh"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Державний Реєстр Декларацій" id="2DT-5O-06z"/>
+                    <connections>
+                        <outlet property="nameFieldOutlet" destination="9vx-Rx-Avk" id="zro-iQ-ZhS"/>
+                        <segue destination="Gvb-mG-aQy" kind="show" identifier="showResult" id="ZnT-ht-eEw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="834.78260869565224" y="138.61607142857142"/>
+        </scene>
+        <!--Search Result View Controller-->
+        <scene sceneID="Yb8-on-AoV">
+            <objects>
+                <viewController storyboardIdentifier="SearchResultViewController" id="Gvb-mG-aQy" customClass="SearchResultViewController" customModule="DeclarationsUA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hqY-tE-TD3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XVl-Ov-l8W">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PbO-AQ-qao"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PbO-AQ-qao" firstAttribute="trailing" secondItem="XVl-Ov-l8W" secondAttribute="trailing" id="QOC-FE-djg"/>
+                            <constraint firstItem="XVl-Ov-l8W" firstAttribute="top" secondItem="PbO-AQ-qao" secondAttribute="top" id="Vii-EK-ieJ"/>
+                            <constraint firstItem="XVl-Ov-l8W" firstAttribute="leading" secondItem="PbO-AQ-qao" secondAttribute="leading" id="wJR-4c-HOA"/>
+                            <constraint firstItem="PbO-AQ-qao" firstAttribute="bottom" secondItem="XVl-Ov-l8W" secondAttribute="bottom" id="xYY-OF-7uW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Unp-pA-XNy"/>
+                    <connections>
+                        <outlet property="tableView" destination="XVl-Ov-l8W" id="YcQ-9v-z5g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAj-sf-ypt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1640.5797101449277" y="132.58928571428572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jfO-1I-kPr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gHy-bL-0NO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a9p-Q3-wcy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JOV-bl-Uho"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4M-Pl-6Qq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-75.362318840579718" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

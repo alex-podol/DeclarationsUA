@@ -11,6 +11,7 @@ import Foundation
 struct K {
     struct ProductionServer {
         static let baseURL = "https://public-api.nazk.gov.ua/v1/declaration/"
+        static let reportCorruptionURL = "https://nazk.gov.ua/report-corruption/"
     }
     
 //    struct APIParameterKey {
