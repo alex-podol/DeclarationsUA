@@ -15,8 +15,6 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
         nameFieldOutlet.delegate = self
         
     }
@@ -43,6 +41,7 @@ class SearchViewController: UIViewController {
             
             let destination = segue.destination as? SearchResultViewController
             
+            // передача ФИО ил должности далее для поиска
             destination?.nameForSearch = nameFieldOutlet.text ?? ""
             
             let backButton = UIBarButtonItem()

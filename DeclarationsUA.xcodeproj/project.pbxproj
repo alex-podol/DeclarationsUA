@@ -12,6 +12,8 @@
 		2A815D69257CEA2300CB3D6F /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A815D67257CEA2300CB3D6F /* AccountTableViewCell.xib */; };
 		2A815D70257D280400CB3D6F /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A815D6F257D280400CB3D6F /* SearchResultViewController.swift */; };
 		2A815D7A257D37EA00CB3D6F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A815D79257D37EA00CB3D6F /* SearchViewController.swift */; };
+		2A815D85257D848600CB3D6F /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A815D83257D848600CB3D6F /* ActivityTableViewCell.swift */; };
+		2A815D86257D848600CB3D6F /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A815D84257D848600CB3D6F /* ActivityTableViewCell.xib */; };
 		2ABB4E402579618C00A04860 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB4E3F2579618C00A04860 /* NetworkLayer.swift */; };
 		2ABB4E452579735100A04860 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB4E442579735100A04860 /* Constants.swift */; };
 		2ACDE99525792F3E0064271D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDE99425792F3E0064271D /* AppDelegate.swift */; };
@@ -28,6 +30,8 @@
 		2A815D67257CEA2300CB3D6F /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		2A815D6F257D280400CB3D6F /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		2A815D79257D37EA00CB3D6F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2A815D83257D848600CB3D6F /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		2A815D84257D848600CB3D6F /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		2ABB4E3F2579618C00A04860 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		2ABB4E442579735100A04860 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2ACDE99125792F3E0064271D /* DeclarationsUA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeclarationsUA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +74,8 @@
 			children = (
 				2A815D66257CEA2300CB3D6F /* AccountTableViewCell.swift */,
 				2A815D67257CEA2300CB3D6F /* AccountTableViewCell.xib */,
+				2A815D83257D848600CB3D6F /* ActivityTableViewCell.swift */,
+				2A815D84257D848600CB3D6F /* ActivityTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -77,8 +83,8 @@
 		2A815D6D257D249300CB3D6F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2A815D6F257D280400CB3D6F /* SearchResultViewController.swift */,
 				2A815D79257D37EA00CB3D6F /* SearchViewController.swift */,
+				2A815D6F257D280400CB3D6F /* SearchResultViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 			files = (
 				2ACDE9A125792F420064271D /* LaunchScreen.storyboard in Resources */,
 				2A815D69257CEA2300CB3D6F /* AccountTableViewCell.xib in Resources */,
+				2A815D86257D848600CB3D6F /* ActivityTableViewCell.xib in Resources */,
 				2ACDE99E25792F420064271D /* Assets.xcassets in Resources */,
 				2ACDE99C25792F3E0064271D /* Main.storyboard in Resources */,
 			);
@@ -269,6 +276,7 @@
 			files = (
 				2ABB4E452579735100A04860 /* Constants.swift in Sources */,
 				2A815D70257D280400CB3D6F /* SearchResultViewController.swift in Sources */,
+				2A815D85257D848600CB3D6F /* ActivityTableViewCell.swift in Sources */,
 				2AF1947C257AD7BD00845D2B /* PageModel.swift in Sources */,
 				2A815D7A257D37EA00CB3D6F /* SearchViewController.swift in Sources */,
 				2AF19477257AC75800845D2B /* AccountModel.swift in Sources */,
