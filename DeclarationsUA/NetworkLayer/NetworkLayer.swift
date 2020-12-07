@@ -12,7 +12,7 @@ import SafariServices
 typealias JSON = [String: Any]
 
 
-class NetworkLayer {
+final class NetworkLayer {
     
     static func searchDeclarations(name: String, page: Int = 1, completion: @escaping ([AccountModel]?, PageModel?) -> Void) {
         

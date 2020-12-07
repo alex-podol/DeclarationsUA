@@ -78,7 +78,13 @@
                             <constraint firstItem="QFD-j9-abz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="zRj-SW-TXh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Державний Реєстр Декларацій" id="2DT-5O-06z"/>
+                    <navigationItem key="navigationItem" title="Державний Реєстр Декларацій" id="2DT-5O-06z">
+                        <barButtonItem key="rightBarButtonItem" image="item01" id="led-Ld-XX1">
+                            <connections>
+                                <action selector="toNazkSite:" destination="BYZ-38-t0r" id="qhf-h6-GwJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameFieldOutlet" destination="9vx-Rx-Avk" id="zro-iQ-ZhS"/>
                         <segue destination="Gvb-mG-aQy" kind="show" identifier="showResult" id="ZnT-ht-eEw"/>
@@ -144,6 +150,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="item01" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

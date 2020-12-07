@@ -7,9 +7,9 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
 
-    @IBOutlet weak var nameFieldOutlet: UITextField!
+    @IBOutlet fileprivate weak var nameFieldOutlet: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,12 +18,12 @@ class SearchViewController: UIViewController {
         
     }
     
-    @IBAction func searchButtonAction() {
+    @IBAction private func searchButtonAction() {
         performSegue(withIdentifier: "showResult", sender: nil)
         
     }
     
-    @IBAction func reportButtonAction() {
+    @IBAction private func reportButtonAction() {
         
         if let safariVC = NetworkLayer.getSafariViewController(urlString: K.ProductionServer.reportCorruptionURL) {
             self.present(safariVC, animated: true, completion: nil)
@@ -45,15 +45,19 @@ class SearchViewController: UIViewController {
             navigationItem.backBarButtonItem = backButton
         }
     }
+    
+    @IBAction private func toNazkSite(_ sender: UIBarButtonItem) {
+        if let safariVC = NetworkLayer.getSafariViewController(urlString: K.ProductionServer.nazkSite) {
+            self.present(safariVC, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 extension SearchViewController: UITextFieldDelegate {
-    
     // по нажатию клавиши Enter переходим на представление с результатами поиска
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchButtonAction()
         return true
     }
-    
-    
 }

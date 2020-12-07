@@ -9,13 +9,13 @@
 import UIKit
 import SafariServices
 
-class SearchResultViewController: UIViewController {
+final class SearchResultViewController: UIViewController {
     
     var nameForSearch: String = ""
-    var currentPage: PageModel?
-    var isLoadingNow = false
+    fileprivate var currentPage: PageModel?
+    fileprivate var isLoadingNow = false
     
-    var foundAccounts: [AccountModel] = [] {
+    fileprivate var foundAccounts: [AccountModel] = [] {
         
         // наблюдатель за массивом записей
         didSet {
@@ -25,7 +25,7 @@ class SearchResultViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class SearchResultViewController: UIViewController {
         }
     }
     
-    func makeNetworkRequest(errorHandler: (() -> Void)?) {
+    fileprivate func makeNetworkRequest(errorHandler: (() -> Void)?) {
         if !isLoadingNow {
             isLoadingNow = true
             
