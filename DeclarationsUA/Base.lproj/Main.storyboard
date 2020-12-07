@@ -47,7 +47,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L20-3f-7zw">
                                 <rect key="frame" x="15" y="234" width="384" height="351"/>
-                                <mutableString key="text">Проект має на меті спростити подання публічними службовцями їх декларацій майнового стану, доступ до них та їх перевірку. Для цього система електронного декларування передбачає виконання таких задач:
+                                <string key="text">Проект має на меті спростити подання публічними службовцями їх декларацій майнового стану, доступ до них та їх перевірку. Для цього система електронного декларування передбачає виконання таких задач:
 
 ● спрощення введення даних суб’єктом декларування;
 ● забезпечення захищеного протоколу автентифікації для входу в систему електронного декларування;
@@ -55,7 +55,7 @@
 ● забезпечення захищеного зберігання введених даних;
 ● надання відкритого онлайнового доступу та засобів пошуку по відкритих даних, що містяться в деклараціях, і можливості їх звантаження;
 ● API для розробників для забезпечення захищеного доступу до відкритих даних із декларацій майнового стану та їх звантаження в різних форматах;
-● оптимізація процедур обробки декларацій майнового стану персоналом НАЗК і створення ефективного бізнес-процесу перевірки декларацій.</mutableString>
+● оптимізація процедур обробки декларацій майнового стану персоналом НАЗК і створення ефективного бізнес-процесу перевірки декларацій.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -99,6 +99,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XVl-Ov-l8W">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="UtH-J0-a2c">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PbO-AQ-qao"/>

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SafariServices // для использования browser Safari
 
 class SearchViewController: UIViewController {
 
@@ -26,10 +25,7 @@ class SearchViewController: UIViewController {
     
     @IBAction func reportButtonAction() {
         
-        if let reportURL = URL(string: K.ProductionServer.reportCorruptionURL) {
-            
-            let safariVC = SFSafariViewController(url: reportURL)
-            
+        if let safariVC = NetworkLayer.getSafariViewController(urlString: K.ProductionServer.reportCorruptionURL) {
             self.present(safariVC, animated: true, completion: nil)
         }
     }

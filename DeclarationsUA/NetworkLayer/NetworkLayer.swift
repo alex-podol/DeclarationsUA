@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SafariServices
 
 typealias JSON = [String: Any]
 
@@ -44,4 +45,17 @@ class NetworkLayer {
             }
         }
     }
+    
+    static func getSafariViewController(urlString: String) -> SFSafariViewController? {
+        
+        if let reportURL = URL(string: urlString) {
+            let safariVC = SFSafariViewController(url: reportURL)
+            return safariVC
+        } else {
+            return nil
+        }
+    }
+    
+    
+    
 }

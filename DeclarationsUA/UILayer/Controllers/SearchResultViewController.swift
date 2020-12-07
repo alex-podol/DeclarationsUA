@@ -7,6 +7,7 @@
 
 
 import UIKit
+import SafariServices
 
 class SearchResultViewController: UIViewController {
     
@@ -108,5 +109,38 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
             makeNetworkRequest(errorHandler: nil)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let account = foundAccounts[indexPath.row]
+        
+        if let pdfLink = account.linkPDF {
+            
+            let actionSheet = UIAlertController(title: "\(account.firstname) \(account.lastname)", message: "Відкрити детальну інформацію", preferredStyle: .actionSheet)
+            
+            actionSheet.addAction(UIAlertAction(title: "Інтернет сторінка", style: .default, handler: { _ in
+                if let safariVC = NetworkLayer.getSafariViewController(urlString: K.ProductionServer.htmlURL + account.id) {
+                    self.present(safariVC, animated: true, completion: nil)
+                }
+            }))
+            
+            actionSheet.addAction(UIAlertAction(title: "PDF документ", style: .default, handler: { _ in
+                if let safariVC = NetworkLayer.getSafariViewController(urlString: pdfLink) {
+                    self.present(safariVC, animated: true, completion: nil)
+                }
+            }))
+            
+            actionSheet.addAction(UIAlertAction(title: "Відміна", style: .cancel , handler: nil))
+            self.present(actionSheet, animated: true, completion: nil)
+            
+        } else {
+            if let safariVC = NetworkLayer.getSafariViewController(urlString: K.ProductionServer.htmlURL + account.id) {
+                self.present(safariVC, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    
+    
     
 }
